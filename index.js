@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-bot.login("NDY3Njc3NjgwMjUxMzA1OTg0.DiuGuA.vP_F5Uzshl-tpDXeWJMs2i2wan8");
+bot.login(process.env.token);
 
 const status = ['online', 'idle', 'dnd', 'invisible'];
 const statusChoose = Math.floor(Math.random() * status.length - 2);
