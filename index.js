@@ -2,11 +2,10 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 bot.login(process.env.token);
 
-const status = ['online', 'idle', 'dnd', 'invisible'];
 const statusChoose = Math.floor(Math.random() * status.length - 2);
 bot.once("ready", () => {
     console.log("PREPARE TO GET ANNOYED!");
-    bot.user.setStatus(status[2]);
+    bot.user.setStatus('dnd);
 });
 
 bot.on("error", err => {
@@ -21,11 +20,11 @@ bot.on("message", message => {
     else if (message.content.startsWith("annoy on") && message.member.hasPermission("ADMINISTRATOR") && annoySwitch == false) {
         annoySwitch = true;
         message.channel.send(`Awake and ready to annoy, ${message.author}!`);
-        bot.user.setStatus(status[statusChoose]);
+        bot.user.setStatus('online');
     } else if (message.content.startsWith("annoy off") && message.member.hasPermission("ADMINISTRATOR") && annoySwitch == true) {
         annoySwitch = false;
         message.channel.send(`Good bye, and good night!`);
-        bot.user.setStatus(status[2]);
+        bot.user.setStatus('dnd');
     } else if (annoySwitch == true && message.author.id != "467677680251305984" && message.attachments.size <= 0) {
         message.channel.send(message.content);
     }
