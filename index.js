@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 bot.login(process.env.token);
 
-const statusChoose = Math.floor(Math.random() * status.length - 2);
 bot.once("ready", () => {
     console.log("PREPARE TO GET ANNOYED!");
     bot.user.setStatus('dnd);
