@@ -4,7 +4,7 @@ bot.login(process.env.token);
 
 bot.once("ready", () => {
     console.log("PREPARE TO GET ANNOYED!");
-    bot.user.setStatus('dnd);
+    bot.user.setStatus('dnd');
 });
 
 bot.on("error", err => {
