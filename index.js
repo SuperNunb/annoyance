@@ -29,6 +29,6 @@ bot.on("message", message => {
         bot.user.setStatus('dnd');
     } else if (annoySwitch == true && message.author.id != "467677680251305984" && message.attachments.size <= 0) {
         message.channel.send(message.content);
-    }
+    } //else if (message.content.startsWith("annoy") && message.content.includes("@") && message.aouthor.) {}
     if (message.author.id == "467677680251305984") console.log(`Annoyance said something on #${message.channel.name}, in ${message.channel.guild.name}.`);
 });
