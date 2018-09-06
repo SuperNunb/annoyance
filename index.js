@@ -8,7 +8,10 @@ bot.once("ready", () => {
 });
 
 bot.on("error", err => {
-    console.log(err);
+    if (err.message.startsWith("read ECONNRESET")) {
+        console.log(ECONNRESET);
+    }
+    else console.log(err);
 });
 
 let annoySwitch = false;
