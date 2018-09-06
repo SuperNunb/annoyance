@@ -23,7 +23,7 @@ bot.on("message", message => {
         annoySwitch = true;
         message.channel.send(`Awake and ready to annoy, ${message.author}!`);
         bot.user.setStatus('online');
-    } else if (message.content.startsWith("annoy off") && message.member.hasPermission("ADMINISTRATOR") && annoySwitch == true) {
+    } else if (message.content.startsWith("annoy off") && annoySwitch == true) {
         annoySwitch = false;
         message.channel.send(`Good bye, and good night!`);
         bot.user.setStatus('dnd');
