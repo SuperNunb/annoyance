@@ -5,7 +5,7 @@ bot.login(process.env.token);
 bot.once("ready", () => {
     console.log("PREPARE TO GET ANNOYED!");
     bot.user.setStatus('dnd');
-    bot.user.setGame("The Annoying Game");
+    bot.user.setGame("The Annoying Game | Say annoy help");
 });
 
 bot.on("error", err => {
