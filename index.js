@@ -29,7 +29,7 @@ bot.on("message", message => {
         bot.user.setStatus('dnd');
     } else if (annoySwitch == true && message.author.id != "467677680251305984" && message.attachments.size <= 0) {
         message.channel.send(message.content);
-    } else if (message.content.startsWith("annoy") && message.mentions.members.array()[0] != null && message.mentions.roles.array()[0] != null) {
+    } else if (message.content.startsWith("annoy") && (message.mentions.members.array()[0] != null || message.mentions.roles.array()[0] != null || message.mentions.users.array()[0] != null || message.mentions.everyone.array()[0] != null)) {
          if (message.member.hasPermission("MENTION_EVERYONE")) {
              if (message.mentions.roles.array()[0] != null) {
                  message.channel.send(`You can only annoy users, ${message.author}.`);
