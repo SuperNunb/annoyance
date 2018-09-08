@@ -31,12 +31,9 @@ bot.on("message", message => {
         message.channel.send(message.content);
     } else if (message.content.startsWith("annoy") && message.content.includes("@")) {
          if (message.member.hasPermission("MENTION_EVERYONE")) {
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
-             message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
+             setInterval(() => {
+                 message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
+             }, 2750);
          } else message.channel.send(`Sorry, ${message.author}. You aren't allowed to annoy users unless you can use the everyone tag.`);
     }
 });
