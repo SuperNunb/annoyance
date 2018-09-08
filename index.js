@@ -32,9 +32,6 @@ bot.on("message", message => {
     } else if (message.content.startsWith("annoy") && message.content.includes("@")) {
          if (message.member.hasPermission("MENTION_EVERYONE")) {
              let mentionAnnoy = true;
-             setTimeout(() => {
-                 mentionAnnoy = false;
-             }, 24750);
              while(mentionAnnoy == true) {
                  setInterval(() => {
                      message.channel.send(`Hey ${message.content.slice(6, message.content.length)}`);
