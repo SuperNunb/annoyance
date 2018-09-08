@@ -31,16 +31,19 @@ bot.on("message", message => {
         message.channel.send(message.content);
     } else if (message.content.startsWith("annoy") && message.content.includes("@")) {
          if (message.member.hasPermission("MENTION_EVERYONE")) {
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
-             message.channel.send(`Hey ${message.mentions.members.first()}`);
+             if (message.mentions.roles != undefined) return;
+             else {
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+                 message.channel.send(`Hey ${message.mentions.members.first()}`);
+             }
          } else message.channel.send(`Sorry, ${message.author}. You aren't allowed to annoy users unless you can use the everyone tag.`);
     }
 });
