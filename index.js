@@ -31,8 +31,8 @@ bot.on("message", message => {
         message.channel.send(message.content);
     } else if (message.content.startsWith("annoy") && message.content.includes("@")) {
          if (message.member.hasPermission("MENTION_EVERYONE")) {
-             console.log(message.mentions.roles);
-             if (message.mentions.roles != undefined) return;
+             console.log(message.mentions.roles.array());
+             if (message.mentions.roles.array() != undefined) return;
              else {
                  message.channel.send(`Hey ${message.mentions.members.first()}`);
                  message.channel.send(`Hey ${message.mentions.members.first()}`);
